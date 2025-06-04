@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserData : MonoBehaviour
+[CreateAssetMenu(fileName = "New Data", menuName = "Data")]
+public class UserDataSub : ScriptableObject
 {
     public string name;
     public int cash;
