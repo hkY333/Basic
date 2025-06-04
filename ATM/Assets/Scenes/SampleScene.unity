@@ -1449,6 +1449,8 @@ MonoBehaviour:
     name: 
     cash: 0
     balance: 0
+  cashFormat: {fileID: 1889729112}
+  balanceFormat: {fileID: 198656068}
   myName: {fileID: 809337634}
   myCash: {fileID: 1889729110}
   myBalance: {fileID: 198656066}

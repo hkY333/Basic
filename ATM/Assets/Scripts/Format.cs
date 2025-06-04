@@ -5,7 +5,7 @@ public class Format : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
 
-    void Start()
+    public void Formatting()
     {
         ulong num = ulong.Parse(text.text);
         text.text = num.ToString("N0");

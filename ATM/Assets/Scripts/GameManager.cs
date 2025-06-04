@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager instance;
 
     public UserData userData;
+    [SerializeField] private Format cashFormat;
+    [SerializeField] private Format balanceFormat;
 
     public TextMeshProUGUI myName;
     public TextMeshProUGUI myCash;
@@ -13,9 +15,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -23,12 +25,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Instance = GetComponent<GameManager>();
-        userData = new UserData("영훈", 100000, 500000);
+        instance = GetComponent<GameManager>();
     }
 
     void Start()
     {
+        userData = new UserData("김영훈", 100000, 500000);
         Refresh();
     }
 
@@ -37,5 +39,8 @@ public class GameManager : MonoBehaviour
         myName.text = userData.name;
         myCash.text = userData.cash.ToString();
         myBalance.text = userData.balance.ToString();
+
+        cashFormat.Formatting();
+        balanceFormat.Formatting();
     }
 }
