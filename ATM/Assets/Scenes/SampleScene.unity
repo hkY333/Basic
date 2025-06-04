@@ -257,7 +257,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 96575966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952011584}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: OpenDepositUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &96575966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,7 +1463,7 @@ GameObject:
   - component: {fileID: 412393386}
   - component: {fileID: 412393387}
   m_Layer: 5
-  m_Name: Withdrawal
+  m_Name: WithdrawalUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3374,6 +3386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952011583}
   - component: {fileID: 952011582}
+  - component: {fileID: 952011584}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3417,6 +3430,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952011584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952011581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ee1fddfd231d24a85eaf8f8a88d48e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depositBtn: {fileID: 96575963}
+  withdrawalBtn: {fileID: 2136255165}
+  depositUI: {fileID: 1749925063}
+  withdrawalUI: {fileID: 412393385}
 --- !u!1 &961432460
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,7 +3956,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1075285413}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952011584}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: CloseDepositUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1075285413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4048,7 +4089,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1190092109}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952011584}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: CloseWithdrawalUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1190092109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5166,7 +5219,7 @@ GameObject:
   - component: {fileID: 1749925064}
   - component: {fileID: 1749925065}
   m_Layer: 5
-  m_Name: Deposit
+  m_Name: DepositUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6788,7 +6841,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2136255168}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952011584}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: OpenWithdrawalUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2136255168
 MonoBehaviour:
   m_ObjectHideFlags: 0
