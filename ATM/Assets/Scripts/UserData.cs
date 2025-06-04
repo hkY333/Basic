@@ -1,13 +1,11 @@
-﻿using UnityEngine;
-
-[System.Serializable]
+﻿[System.Serializable]
 public class UserData
 {
     public string name;
-    public int cash;
-    public int balance;
+    public ulong cash;
+    public ulong balance;
 
-    public UserData(string newName, int newCash, int newBalance)
+    public UserData(string newName, ulong newCash, ulong newBalance)
     {
         name = newName;
         cash = newCash;

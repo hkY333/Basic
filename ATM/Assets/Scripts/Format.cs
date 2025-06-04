@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
+﻿using TMPro;
 using UnityEngine;
 
 public class Format : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private int num;
 
-    // Start is called before the first frame update
     void Start()
     {
-        text.text = num.ToString("#,###");
+        ulong num = ulong.Parse(text.text);
+        text.text = num.ToString("N0");
     }
 }

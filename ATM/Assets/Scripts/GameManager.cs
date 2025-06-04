@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +6,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public UserData userData;
+
+    public TextMeshProUGUI myName;
+    public TextMeshProUGUI myCash;
+    public TextMeshProUGUI myBalance;
 
     private void Awake()
     {
@@ -21,11 +24,18 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = GetComponent<GameManager>();
+        userData = new UserData("영훈", 100000, 500000);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        userData = new UserData("영훈", 100000, 50000);
+        Refresh();
+    }
+
+    public void Refresh()
+    {
+        myName.text = userData.name;
+        myCash.text = userData.cash.ToString();
+        myBalance.text = userData.balance.ToString();
     }
 }
