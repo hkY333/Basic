@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class UserData : MonoBehaviour
+[System.Serializable]
+public class UserData
 {
     public string name;
     public int cash;

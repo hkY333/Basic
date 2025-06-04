@@ -8,10 +8,6 @@ public class GameManager : MonoBehaviour
 
     public UserData userData;
 
-    public string _name;
-    public int _cash;
-    public int _balance;
-
     private void Awake()
     {
         if (Instance == null)
@@ -23,11 +19,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Instance = GetComponent<GameManager>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        userData = new UserData(_name, _cash, _balance);
+        userData = new UserData("영훈", 100000, 50000);
     }
 }
