@@ -14,6 +14,5 @@ public class Format : MonoBehaviour
     void Start()
     {
         text.text = num.ToString("#,###");
-        //text.text = string.Format("{0:#,###}", text.text);
     }
 }
