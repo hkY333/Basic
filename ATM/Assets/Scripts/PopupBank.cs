@@ -13,6 +13,7 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject attentionUI;
     [SerializeField] private GameObject warningUI;
     [SerializeField] private TMP_InputField customDeposit;
+    [SerializeField] private TMP_InputField customWithdraw;
 
     public void OpenDepositUI()
     {
@@ -66,11 +67,21 @@ public class PopupBank : MonoBehaviour
 
     public void Withdraw(int money)
     {
-        int nowCash = int.Parse(GameManager.instance.myCash.text);
-        int nowBalance = int.Parse(GameManager.instance.myBalance.text);
+        string changeCash = GameManager.instance.myCash.text.Replace(",", "").Trim();
+        string changeBalance = GameManager.instance.myBalance.text.Replace(",", "").Trim();
 
-        nowCash += money;
-        nowBalance -= money;
+        int nowCash = int.Parse(changeCash);
+        int nowBalance = int.Parse(changeBalance);
+
+        if (nowBalance - money >= 0)
+        {
+            nowCash += money;
+            nowBalance -= money;
+        }
+        else
+        {
+            OpenAttentionUI();
+        }
 
         GameManager.instance.myCash.text = nowCash.ToString();
         GameManager.instance.myBalance.text = nowBalance.ToString();
@@ -78,12 +89,46 @@ public class PopupBank : MonoBehaviour
 
     public void CustomDeposit()
     {
-        int nowCustom = int.Parse(customDeposit.text);
+        if (customDeposit.text == "") OpenWarningUI();
 
-        if (nowCustom > 0) Deposit(nowCustom);
-        else OpenWarningUI();
+        else
+        {
+            int nowCustom = int.Parse(customDeposit.text);
 
-        customDeposit.text = null;
+            if (nowCustom > 0)
+            {
+                Deposit(nowCustom);
+            }
+
+            else
+            {
+                OpenWarningUI();
+            }
+
+            customDeposit.text = null;
+        }
+    }
+
+    public void CustomWithdraw()
+    {
+        if (customWithdraw.text == "") OpenAttentionUI();
+
+        else
+        {
+            int nowCustom = int.Parse(customWithdraw.text);
+        
+            if (nowCustom > 0)
+            {
+                Withdraw(nowCustom);
+            }
+
+            else
+            {
+                OpenWarningUI();
+            }
+
+            customWithdraw.text = null;
+        }
     }
 
     public void OpenAttentionUI()
