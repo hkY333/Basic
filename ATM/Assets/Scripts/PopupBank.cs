@@ -37,13 +37,30 @@ public class PopupBank : MonoBehaviour
         withdrawUI.SetActive(false);
     }
 
-    public void Deposit()
+    public void Deposit(int money)
     {
+        string changeCash = GameManager.instance.myCash.text.Replace(",", "").Trim();
+        string changeBalance = GameManager.instance.myBalance.text.Replace(",", "").Trim();
 
+        int nowCash = int.Parse(changeCash);
+        int nowBalance = int.Parse(changeBalance);
+
+        nowCash -= money;
+        nowBalance += money;
+
+        GameManager.instance.myCash.text = nowCash.ToString();
+        GameManager.instance.myBalance.text = nowBalance.ToString();
     }
 
-    public void Withdraw()
+    public void Withdraw(int money)
     {
+        int nowCash = int.Parse(GameManager.instance.myCash.text);
+        int nowBalance = int.Parse(GameManager.instance.myBalance.text);
 
+        nowCash += money;
+        nowBalance -= money;
+
+        GameManager.instance.myCash.text = nowCash.ToString();
+        GameManager.instance.myBalance.text = nowBalance.ToString();
     }
 }
