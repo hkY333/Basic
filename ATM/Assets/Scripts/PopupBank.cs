@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PopupBank : MonoBehaviour
@@ -10,6 +11,7 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject depositUI;
     [SerializeField] private GameObject withdrawUI;
     [SerializeField] private GameObject attentionUI;
+    [SerializeField] private GameObject warningUI;
     [SerializeField] private TMP_InputField customDeposit;
 
     public void OpenDepositUI()
@@ -87,5 +89,15 @@ public class PopupBank : MonoBehaviour
     public void CloseAttentionUI()
     {
         attentionUI?.SetActive(false);
+    }
+
+    public void OpenWarningUI()
+    {
+        warningUI?.SetActive(true);
+    }
+
+    public void CloseWarningUI()
+    {
+        warningUI?.SetActive(false);
     }
 }
