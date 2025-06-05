@@ -43,4 +43,14 @@ public class GameManager : MonoBehaviour
         cashFormat.Formatting();
         balanceFormat.Formatting();
     }
+
+    public void SaveUserData()
+    {
+
+    }
+
+    public void LoadUserData()
+    {
+
+    }
 }
