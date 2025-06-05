@@ -1536,10 +1536,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2711,7 +2711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD604\uAE08\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4!"
+  m_text: "\uC794\uC561\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5df7d2d6c33fcf04fa9a4538f9891846, type: 2}
   m_sharedMaterial: {fileID: 8108142148915471372, guid: 5df7d2d6c33fcf04fa9a4538f9891846, type: 2}
@@ -3137,7 +3137,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 772156941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 952011584}
+        m_TargetAssemblyTypeName: PopupBank, Assembly-CSharp
+        m_MethodName: CloseAttentionUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &772156941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3918,6 +3930,7 @@ MonoBehaviour:
   withdrawBtn: {fileID: 2136255165}
   depositUI: {fileID: 1749925063}
   withdrawUI: {fileID: 412393385}
+  AttentionUI: {fileID: 1889867012}
 --- !u!1 &961432460
 GameObject:
   m_ObjectHideFlags: 0
@@ -6830,7 +6843,7 @@ GameObject:
   - component: {fileID: 1889867015}
   - component: {fileID: 1889867014}
   m_Layer: 5
-  m_Name: AttentionBackGround
+  m_Name: AttentionUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

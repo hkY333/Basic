@@ -8,6 +8,7 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject withdrawBtn;
     [SerializeField] private GameObject depositUI;
     [SerializeField] private GameObject withdrawUI;
+    [SerializeField] private GameObject AttentionUI;
 
     public void OpenDepositUI()
     {
@@ -62,5 +63,15 @@ public class PopupBank : MonoBehaviour
 
         GameManager.instance.myCash.text = nowCash.ToString();
         GameManager.instance.myBalance.text = nowBalance.ToString();
+    }
+
+    public void OpenAttentionUI()
+    {
+        AttentionUI?.SetActive(true);
+    }
+
+    public void CloseAttentionUI()
+    {
+        AttentionUI?.SetActive(false);
     }
 }
