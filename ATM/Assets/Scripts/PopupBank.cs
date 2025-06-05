@@ -5,35 +5,45 @@ using UnityEngine;
 public class PopupBank : MonoBehaviour
 {
     [SerializeField] private GameObject depositBtn;
-    [SerializeField] private GameObject withdrawalBtn;
+    [SerializeField] private GameObject withdrawBtn;
     [SerializeField] private GameObject depositUI;
-    [SerializeField] private GameObject withdrawalUI;
+    [SerializeField] private GameObject withdrawUI;
 
     public void OpenDepositUI()
     {
         depositBtn.SetActive(false);
-        withdrawalBtn.SetActive(false);
+        withdrawBtn.SetActive(false);
         depositUI.SetActive(true);
     }
 
-    public void OpenWithdrawalUI() 
+    public void OpenWithdrawUI() 
     {
         depositBtn.SetActive(false);
-        withdrawalBtn.SetActive(false);
-        withdrawalUI.SetActive(true);
+        withdrawBtn.SetActive(false);
+        withdrawUI.SetActive(true);
     }
 
     public void CloseDepositUI()
     {
         depositBtn.SetActive(true);
-        withdrawalBtn.SetActive(true);
+        withdrawBtn.SetActive(true);
         depositUI.SetActive(false);
     }
 
-    public void CloseWithdrawalUI()
+    public void CloseWithdrawUI()
     {
         depositBtn.SetActive(true);
-        withdrawalBtn.SetActive(true);
-        withdrawalUI.SetActive(false);
+        withdrawBtn.SetActive(true);
+        withdrawUI.SetActive(false);
+    }
+
+    public void Deposit()
+    {
+
+    }
+
+    public void Withdraw()
+    {
+
     }
 }
