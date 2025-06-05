@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PopupBank : MonoBehaviour
@@ -8,7 +9,8 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject withdrawBtn;
     [SerializeField] private GameObject depositUI;
     [SerializeField] private GameObject withdrawUI;
-    [SerializeField] private GameObject AttentionUI;
+    [SerializeField] private GameObject attentionUI;
+    [SerializeField] private TMP_InputField customDeposit;
 
     public void OpenDepositUI()
     {
@@ -46,8 +48,15 @@ public class PopupBank : MonoBehaviour
         int nowCash = int.Parse(changeCash);
         int nowBalance = int.Parse(changeBalance);
 
-        nowCash -= money;
-        nowBalance += money;
+        if (nowCash - money >= 0)
+        {
+            nowCash -= money;
+            nowBalance += money;
+        }
+        else
+        {
+            OpenAttentionUI();
+        }
 
         GameManager.instance.myCash.text = nowCash.ToString();
         GameManager.instance.myBalance.text = nowBalance.ToString();
@@ -65,13 +74,18 @@ public class PopupBank : MonoBehaviour
         GameManager.instance.myBalance.text = nowBalance.ToString();
     }
 
+    public void CustomDeposit()
+    {
+        
+    }
+
     public void OpenAttentionUI()
     {
-        AttentionUI?.SetActive(true);
+        attentionUI?.SetActive(true);
     }
 
     public void CloseAttentionUI()
     {
-        AttentionUI?.SetActive(false);
+        attentionUI?.SetActive(false);
     }
 }
