@@ -78,7 +78,12 @@ public class PopupBank : MonoBehaviour
 
     public void CustomDeposit()
     {
-        
+        int nowCustom = int.Parse(customDeposit.text);
+
+        if (nowCustom > 0) Deposit(nowCustom);
+        else OpenWarningUI();
+
+        customDeposit.text = null;
     }
 
     public void OpenAttentionUI()
