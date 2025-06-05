@@ -111,7 +111,7 @@ public class PopupBank : MonoBehaviour
 
     public void CustomWithdraw()
     {
-        if (customWithdraw.text == "") OpenAttentionUI();
+        if (customWithdraw.text == "") OpenWarningUI();
 
         else
         {
