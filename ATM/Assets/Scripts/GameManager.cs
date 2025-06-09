@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveUserData()
     {
-        string json = JsonUtility.ToJson(userData, true);
+        string json = JsonConvert.SerializeObject(userData, Formatting.Indented);
         File.WriteAllText(path, json);
     }
 
