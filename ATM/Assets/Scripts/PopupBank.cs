@@ -10,11 +10,12 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject withdrawBtn;
     [SerializeField] private GameObject depositUI;
     [SerializeField] private GameObject withdrawUI;
-    [SerializeField] private GameObject checkMoneyUI;
-    [SerializeField] private GameObject checkCustomUI;
     [SerializeField] private GameObject signUpUI;
     [SerializeField] private GameObject bankUI;
     [SerializeField] private GameObject logInUI;
+    [SerializeField] private GameObject checkMoneyUI;
+    [SerializeField] private GameObject checkCustomUI;
+    [SerializeField] private GameObject checkInfoUI;
     [SerializeField] private TMP_InputField customDeposit;
     [SerializeField] private TMP_InputField customWithdraw;
 
@@ -172,5 +173,15 @@ public class PopupBank : MonoBehaviour
     {
         bankUI?.SetActive(true);
         logInUI?.SetActive(false);
+    }
+
+    public void OpenCheckInfoUI()
+    {
+        checkInfoUI?.SetActive(true);
+    }
+
+    public void CloseCheckInfoUI()
+    {
+        checkInfoUI?.SetActive(false);
     }
 }
