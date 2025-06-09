@@ -1,8 +1,12 @@
-﻿using TMPro;
+﻿using System.IO;
+using TMPro;
 using UnityEngine;
+using Newtonsoft.Json.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    string path = Path.Combine(Application.streamingAssetsPath);
+
     public static GameManager instance;
 
     public UserData userData;
