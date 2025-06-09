@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 public class GameManager : MonoBehaviour
 {
-    string path = Path.Combine(Application.streamingAssetsPath);
+    string path = Path.Combine(Application.dataPath, $"Data/Data.json");
 
     public static GameManager instance;
 
@@ -50,7 +50,8 @@ public class GameManager : MonoBehaviour
 
     public void SaveUserData()
     {
-
+        string json = JsonUtility.ToJson(userData, true);
+        File.WriteAllText(path, json);
     }
 
     public void LoadUserData()
