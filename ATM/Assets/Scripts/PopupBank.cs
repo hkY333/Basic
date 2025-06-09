@@ -63,6 +63,8 @@ public class PopupBank : MonoBehaviour
 
         GameManager.instance.myCash.text = nowCash.ToString();
         GameManager.instance.myBalance.text = nowBalance.ToString();
+        GameManager.instance.userData.cash = (ulong)nowCash;
+        GameManager.instance.userData.balance = (ulong)nowBalance;
     }
 
     public void Withdraw(int money)
@@ -85,6 +87,8 @@ public class PopupBank : MonoBehaviour
 
         GameManager.instance.myCash.text = nowCash.ToString();
         GameManager.instance.myBalance.text = nowBalance.ToString();
+        GameManager.instance.userData.cash = (ulong)nowCash;
+        GameManager.instance.userData.balance = (ulong)nowBalance;
     }
 
     public void CustomDeposit()
