@@ -6,8 +6,6 @@ using Newtonsoft.Json;
 
 public class GameManager : MonoBehaviour
 {
-    string path = Path.Combine(Application.persistentDataPath, $"Data/Data.json");
-
     public static GameManager instance;
 
     public UserData userData;
@@ -17,6 +15,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI myName;
     public TextMeshProUGUI myCash;
     public TextMeshProUGUI myBalance;
+
+    private string path;
 
     private void Awake()
     {
@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
         }
 
         instance = GetComponent<GameManager>();
+        
+        path = Path.Combine(Application.persistentDataPath, "/Data.json");
     }
 
     void Start()
