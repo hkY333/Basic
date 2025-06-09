@@ -57,6 +57,15 @@ public class GameManager : MonoBehaviour
 
     public void LoadUserData()
     {
+        string json = File.ReadAllText(path);
+        JToken root = JToken.Parse(json);
 
+        JToken jName = root["name"];
+        JToken jCash = root["cash"];
+        JToken jBalance = root["balance"];
+
+        myName.text = (string)jName;
+        myCash.text = (string)jCash;
+        myBalance.text = (string)jBalance;
     }
 }
