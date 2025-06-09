@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 public class GameManager : MonoBehaviour
 {
-    string path = Path.Combine(Application.dataPath, $"Data/Data.json");
+    string path = Path.Combine(Application.persistentDataPath, $"Data/Data.json");
 
     public static GameManager instance;
 
