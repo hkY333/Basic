@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
         instance = GetComponent<GameManager>();
         
-        path = Path.Combine(Application.persistentDataPath, "/Data.json");
+        path = Path.Combine(Application.persistentDataPath, "Data.json");
     }
 
     void Start()

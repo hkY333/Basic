@@ -10,8 +10,8 @@ public class PopupBank : MonoBehaviour
     [SerializeField] private GameObject withdrawBtn;
     [SerializeField] private GameObject depositUI;
     [SerializeField] private GameObject withdrawUI;
-    [SerializeField] private GameObject attentionUI;
-    [SerializeField] private GameObject warningUI;
+    [SerializeField] private GameObject checkMoneyUI;
+    [SerializeField] private GameObject checkCustomUI;
     [SerializeField] private GameObject signUpUI;
     [SerializeField] private GameObject bankUI;
     [SerializeField] private GameObject logInUI;
@@ -61,7 +61,7 @@ public class PopupBank : MonoBehaviour
         }
         else
         {
-            OpenAttentionUI();
+            OpenCheckMoneyUI();
         }
 
         GameManager.instance.myCash.text = nowCash.ToString();
@@ -85,7 +85,7 @@ public class PopupBank : MonoBehaviour
         }
         else
         {
-            OpenAttentionUI();
+            OpenCheckMoneyUI();
         }
 
         GameManager.instance.myCash.text = nowCash.ToString();
@@ -96,7 +96,7 @@ public class PopupBank : MonoBehaviour
 
     public void CustomDeposit()
     {
-        if (customDeposit.text == "") OpenWarningUI();
+        if (customDeposit.text == "") OpenCheckCustomUI();
 
         else
         {
@@ -109,7 +109,7 @@ public class PopupBank : MonoBehaviour
 
             else
             {
-                OpenWarningUI();
+                OpenCheckCustomUI();
             }
 
             customDeposit.text = null;
@@ -118,7 +118,7 @@ public class PopupBank : MonoBehaviour
 
     public void CustomWithdraw()
     {
-        if (customWithdraw.text == "") OpenWarningUI();
+        if (customWithdraw.text == "") OpenCheckCustomUI();
 
         else
         {
@@ -131,31 +131,31 @@ public class PopupBank : MonoBehaviour
 
             else
             {
-                OpenWarningUI();
+                OpenCheckCustomUI();
             }
 
             customWithdraw.text = null;
         }
     }
 
-    public void OpenAttentionUI()
+    public void OpenCheckMoneyUI()
     {
-        attentionUI?.SetActive(true);
+        checkMoneyUI?.SetActive(true);
     }
 
-    public void CloseAttentionUI()
+    public void CloseCheckMoneyUI()
     {
-        attentionUI?.SetActive(false);
+        checkMoneyUI?.SetActive(false);
     }
 
-    public void OpenWarningUI()
+    public void OpenCheckCustomUI()
     {
-        warningUI?.SetActive(true);
+        checkCustomUI?.SetActive(true);
     }
 
-    public void CloseWarningUI()
+    public void CloseCheckCustomUI()
     {
-        warningUI?.SetActive(false);
+        checkCustomUI?.SetActive(false);
     }
 
     public void OpenSignUpUI()
