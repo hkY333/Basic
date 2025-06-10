@@ -20,7 +20,7 @@ public class PopupSignUp : MonoBehaviour
             uIController = FindObjectOfType<UIController>();
             if (uIController == null)
             {
-                Debug.LogError("UIController를 찾을 수 없습니다! 씬에 존재하는지 확인하세요.");
+                //Debug.LogError("UIController를 찾을 수 없습니다! 씬에 존재하는지 확인하세요.");
             }
         }
         else
@@ -33,7 +33,7 @@ public class PopupSignUp : MonoBehaviour
     {
         if (uIController == null)
         {
-            Debug.LogError("UIController가 null입니다! 인스펙터에서 올바르게 참조되었는지 확인하세요.");
+            //Debug.LogError("UIController가 null입니다! 인스펙터에서 올바르게 참조되었는지 확인하세요.");
         }
         else
         {
@@ -47,7 +47,7 @@ public class PopupSignUp : MonoBehaviour
     {
         if (uIController == null)
         {
-            Debug.LogError("UIController가 null입니다! 인스펙터에서 올바르게 참조되었는지 확인하세요.");
+            //Debug.LogError("UIController가 null입니다! 인스펙터에서 올바르게 참조되었는지 확인하세요.");
         }
         else
         {
