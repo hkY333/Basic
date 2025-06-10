@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject checkInfoUI;
     [SerializeField] private GameObject completeSignUpUI;
     [SerializeField] private PopupSignUp popupSignUp;
+    [SerializeField] private TextMeshProUGUI notice;
 
     public void OpenDepositUI()
     {
@@ -109,7 +110,20 @@ public class UIController : MonoBehaviour
             popupSignUp.password.text == ""  || popupSignUp.passwordConfirm.text == "")
         {
             OpenCheckInfoUI();
+            notice.text = "빈 칸이 존재합니다.";
         }
+
+        else if (popupSignUp.password.text != popupSignUp.passwordConfirm.text)
+        {
+            OpenCheckInfoUI();
+            notice.text = "비밀번호가 일치하지 않습니다.";
+        }
+
+        //else if (GameManager.instance.path )
+        //{
+        //    OpenCheckInfoUI();
+        //    notice.text = "해당 아이디는 이미 사용중입니다.";
+        //}
 
         else
         {
