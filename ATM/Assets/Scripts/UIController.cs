@@ -16,8 +16,6 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject checkCustomUI;
     [SerializeField] private GameObject checkInfoUI;
     [SerializeField] private GameObject completeSignUpUI;
-    public TMP_InputField customDeposit;
-    public TMP_InputField customWithdraw;
 
     public void OpenDepositUI()
     {
