@@ -4375,7 +4375,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1470212052}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: OpenCompleteSignUpUI
+        m_MethodName: CheckSignUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7131,7 +7131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &930008177
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7235,6 +7235,7 @@ MonoBehaviour:
   myName: {fileID: 809337634}
   myCash: {fileID: 1889729110}
   myBalance: {fileID: 198656066}
+  path: 
 --- !u!4 &952011583
 Transform:
   m_ObjectHideFlags: 0
@@ -9649,8 +9650,7 @@ MonoBehaviour:
   checkCustomUI: {fileID: 186801422}
   checkInfoUI: {fileID: 1613389298}
   completeSignUpUI: {fileID: 968438595}
-  customDeposit: {fileID: 460879718}
-  customWithdraw: {fileID: 482044723}
+  popupSignUp: {fileID: 1568515015}
 --- !u!4 &1470212053
 Transform:
   m_ObjectHideFlags: 0
@@ -9967,9 +9967,9 @@ RectTransform:
   - {fileID: 439164005}
   m_Father: {fileID: 1568515013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: -337.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 205, y: 70}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1566296141
@@ -10079,6 +10079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1568515013}
   - component: {fileID: 1568515014}
+  - component: {fileID: 1568515015}
   m_Layer: 5
   m_Name: typing
   m_TagString: Untagged
@@ -10135,6 +10136,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1568515015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568515012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2559d64442c6f4189713e749cd8e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: {fileID: 1189316637}
+  name: {fileID: 763031886}
+  password: {fileID: 662212957}
+  passwordConfirm: {fileID: 439164006}
 --- !u!1 &1571855660
 GameObject:
   m_ObjectHideFlags: 0
@@ -10967,9 +10984,9 @@ RectTransform:
   - {fileID: 1189316636}
   m_Father: {fileID: 1568515013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 205, y: 70}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1696204281
@@ -13675,9 +13692,9 @@ RectTransform:
   - {fileID: 763031885}
   m_Father: {fileID: 1568515013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: -112.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 205, y: 70}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1954168884
@@ -14554,9 +14571,9 @@ RectTransform:
   - {fileID: 662212956}
   m_Father: {fileID: 1568515013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 45, y: -225}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 205, y: 70}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2087416884

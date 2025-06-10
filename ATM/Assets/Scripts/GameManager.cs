@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI myCash;
     public TextMeshProUGUI myBalance;
 
-    private string path;
+    public string path;
 
     private void Awake()
     {

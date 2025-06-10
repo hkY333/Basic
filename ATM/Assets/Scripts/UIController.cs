@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject checkCustomUI;
     [SerializeField] private GameObject checkInfoUI;
     [SerializeField] private GameObject completeSignUpUI;
+    [SerializeField] private PopupSignUp popupSignUp;
 
     public void OpenDepositUI()
     {
@@ -100,5 +101,19 @@ public class UIController : MonoBehaviour
     {
         completeSignUpUI?.SetActive(false);
         CloseSignUpUI();
+    }
+
+    public void CheckSignUp()
+    {
+        if (popupSignUp.id.text == "" || popupSignUp.name.text == "" ||
+            popupSignUp.password.text == ""  || popupSignUp.passwordConfirm.text == "")
+        {
+            OpenCheckInfoUI();
+        }
+
+        else
+        {
+            OpenCompleteSignUpUI();
+        }
     }
 }
