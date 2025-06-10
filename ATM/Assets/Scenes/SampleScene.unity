@@ -1206,7 +1206,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1072731537}
-  m_Father: {fileID: 249951531}
+  m_Father: {fileID: 930008177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1695,8 +1695,6 @@ RectTransform:
   - {fileID: 357012942}
   - {fileID: 932260454}
   - {fileID: 1757654097}
-  - {fileID: 157173949}
-  - {fileID: 1613389299}
   m_Father: {fileID: 418546969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2735,6 +2733,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 249951531}
+  - {fileID: 930008177}
   - {fileID: 1749925064}
   - {fileID: 412393386}
   - {fileID: 1889867013}
@@ -6972,6 +6971,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919182566}
   m_CullTransparentMesh: 1
+--- !u!1 &930008176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930008177}
+  m_Layer: 5
+  m_Name: PopupSignUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &930008177
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930008176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 157173949}
+  - {fileID: 1613389299}
+  m_Father: {fileID: 418546969}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &932260453
 GameObject:
   m_ObjectHideFlags: 0
@@ -7020,6 +7056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 952011583}
+  - component: {fileID: 952011585}
   - component: {fileID: 952011582}
   - component: {fileID: 952011584}
   m_Layer: 0
@@ -7042,6 +7079,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userData:
+    id: 
+    password: 
     name: 
     cash: 0
     balance: 0
@@ -7089,6 +7128,22 @@ MonoBehaviour:
   checkInfoUI: {fileID: 1613389298}
   customDeposit: {fileID: 460879718}
   customWithdraw: {fileID: 482044723}
+--- !u!114 &952011585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952011581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2559d64442c6f4189713e749cd8e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: {fileID: 1189316637}
+  name: {fileID: 763031886}
+  password: {fileID: 662212957}
+  passwordConfirm: {fileID: 439164006}
 --- !u!1 &961432460
 GameObject:
   m_ObjectHideFlags: 0
@@ -9977,7 +10032,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1848882639}
-  m_Father: {fileID: 249951531}
+  m_Father: {fileID: 930008177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

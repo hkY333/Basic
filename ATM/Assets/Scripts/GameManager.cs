@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        userData = new UserData("김영훈", 100000, 100000);
+        userData = new UserData("kyh", "2@" , "김영훈", 100000, 100000);
         Refresh();
     }
 
