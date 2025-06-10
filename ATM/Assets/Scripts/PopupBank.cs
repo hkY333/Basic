@@ -1,51 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
+﻿using TMPro;
 using UnityEngine;
 
 public class PopupBank : MonoBehaviour
 {
-    [SerializeField] private GameObject depositBtn;
-    [SerializeField] private GameObject withdrawBtn;
-    [SerializeField] private GameObject depositUI;
-    [SerializeField] private GameObject withdrawUI;
-    [SerializeField] private GameObject signUpUI;
-    [SerializeField] private GameObject bankUI;
-    [SerializeField] private GameObject logInUI;
-    [SerializeField] private GameObject checkMoneyUI;
-    [SerializeField] private GameObject checkCustomUI;
-    [SerializeField] private GameObject checkInfoUI;
+    private UIController uIController;
     [SerializeField] private TMP_InputField customDeposit;
     [SerializeField] private TMP_InputField customWithdraw;
-
-    public void OpenDepositUI()
-    {
-        depositBtn.SetActive(false);
-        withdrawBtn.SetActive(false);
-        depositUI.SetActive(true);
-    }
-
-    public void OpenWithdrawUI() 
-    {
-        depositBtn.SetActive(false);
-        withdrawBtn.SetActive(false);
-        withdrawUI.SetActive(true);
-    }
-
-    public void CloseDepositUI()
-    {
-        depositBtn.SetActive(true);
-        withdrawBtn.SetActive(true);
-        depositUI.SetActive(false);
-    }
-
-    public void CloseWithdrawUI()
-    {
-        depositBtn.SetActive(true);
-        withdrawBtn.SetActive(true);
-        withdrawUI.SetActive(false);
-    }
 
     public void Deposit(int money)
     {
@@ -62,7 +22,7 @@ public class PopupBank : MonoBehaviour
         }
         else
         {
-            OpenCheckMoneyUI();
+            uIController.OpenCheckMoneyUI();
         }
 
         GameManager.instance.myCash.text = nowCash.ToString();
@@ -86,7 +46,7 @@ public class PopupBank : MonoBehaviour
         }
         else
         {
-            OpenCheckMoneyUI();
+            uIController.OpenCheckMoneyUI();
         }
 
         GameManager.instance.myCash.text = nowCash.ToString();
@@ -97,7 +57,7 @@ public class PopupBank : MonoBehaviour
 
     public void CustomDeposit()
     {
-        if (customDeposit.text == "") OpenCheckCustomUI();
+        if (customDeposit.text == "") uIController.OpenCheckCustomUI();
 
         else
         {
@@ -110,7 +70,7 @@ public class PopupBank : MonoBehaviour
 
             else
             {
-                OpenCheckCustomUI();
+                uIController.OpenCheckCustomUI();
             }
 
             customDeposit.text = null;
@@ -119,7 +79,7 @@ public class PopupBank : MonoBehaviour
 
     public void CustomWithdraw()
     {
-        if (customWithdraw.text == "") OpenCheckCustomUI();
+        if (customWithdraw.text == "") uIController.OpenCheckCustomUI();
 
         else
         {
@@ -132,56 +92,10 @@ public class PopupBank : MonoBehaviour
 
             else
             {
-                OpenCheckCustomUI();
+                uIController.OpenCheckCustomUI();
             }
 
-            customWithdraw.text = null;
+                customWithdraw.text = null;
         }
-    }
-
-    public void OpenCheckMoneyUI()
-    {
-        checkMoneyUI?.SetActive(true);
-    }
-
-    public void CloseCheckMoneyUI()
-    {
-        checkMoneyUI?.SetActive(false);
-    }
-
-    public void OpenCheckCustomUI()
-    {
-        checkCustomUI?.SetActive(true);
-    }
-
-    public void CloseCheckCustomUI()
-    {
-        checkCustomUI?.SetActive(false);
-    }
-
-    public void OpenSignUpUI()
-    {
-        signUpUI?.SetActive(true);
-    }
-
-    public void CloseSignUpUI()
-    {
-        signUpUI?.SetActive(false);
-    }
-
-    public void OpenBankUI()
-    {
-        bankUI?.SetActive(true);
-        logInUI?.SetActive(false);
-    }
-
-    public void OpenCheckInfoUI()
-    {
-        checkInfoUI?.SetActive(true);
-    }
-
-    public void CloseCheckInfoUI()
-    {
-        checkInfoUI?.SetActive(false);
     }
 }
