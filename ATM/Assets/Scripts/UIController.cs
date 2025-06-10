@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -18,6 +18,9 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject completeSignUpUI;
     [SerializeField] private PopupSignUp popupSignUp;
     [SerializeField] private TextMeshProUGUI notice;
+
+    // 이벤트 선언: 회원가입 성공 시 호출
+    public event Action OnSignUpComplete;
 
     public void OpenDepositUI()
     {
@@ -119,15 +122,23 @@ public class UIController : MonoBehaviour
             notice.text = "비밀번호가 일치하지 않습니다.";
         }
 
-        //else if (GameManager.instance.path )
-        //{
-        //    OpenCheckInfoUI();
-        //    notice.text = "해당 아이디는 이미 사용중입니다.";
-        //}
-
         else
         {
-            OpenCompleteSignUpUI();
+            if (File.Exists(popupSignUp.id.text))
+            {
+                OpenCheckInfoUI();
+                notice.text = "해당 아이디는 이미 사용중입니다.";
+            }
+
+            else
+            {
+                OpenCompleteSignUpUI();
+                Debug.Log("창열기");
+
+                OnSignUpComplete?.Invoke();
+                popupSignUp.id.text = popupSignUp.name.text = popupSignUp.password.text =
+                    popupSignUp.passwordConfirm.text = notice.text = "";
+            }
         }
     }
 }
