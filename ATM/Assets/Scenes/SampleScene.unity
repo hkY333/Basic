@@ -7686,6 +7686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ee1fddfd231d24a85eaf8f8a88d48e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uIController: {fileID: 1470212052}
   customDeposit: {fileID: 460879718}
   customWithdraw: {fileID: 482044723}
 --- !u!114 &952011585
@@ -7700,7 +7701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2559d64442c6f4189713e749cd8e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIController: {fileID: 0}
+  uIController: {fileID: 1470212052}
   id: {fileID: 1189316637}
   name: {fileID: 763031886}
   password: {fileID: 662212957}
@@ -13963,18 +13964,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1470212052}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: OpenBankUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 952011582}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadUserData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

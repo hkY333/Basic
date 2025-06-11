@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PopupBank : MonoBehaviour
 {
-    private UIController uIController;
+    [SerializeField] private UIController uIController;
     [SerializeField] private TMP_InputField customDeposit;
     [SerializeField] private TMP_InputField customWithdraw;
 
