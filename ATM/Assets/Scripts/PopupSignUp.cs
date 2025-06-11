@@ -31,7 +31,7 @@ public class PopupSignUp : MonoBehaviour
 
     private void OnEnable()
     {
-        if (uIController == null)
+        if (uIController != null)
         {
             //AddUserData 이벤트 등록
             uIController.OnSignUpComplete += AddUserData;
@@ -40,7 +40,7 @@ public class PopupSignUp : MonoBehaviour
 
     private void OnDisable()
     {
-        if (uIController != null)
+        if (uIController == null)
         {
             //AddUserData 이벤트 해제
             uIController.OnSignUpComplete -= AddUserData;
@@ -55,7 +55,7 @@ public class PopupSignUp : MonoBehaviour
         GameManager.instance.userData = new UserData($"{id.text}", $"{password.text}", $"{name.text}",
             100000, 100000);
         //해당 userData를 persistentDataPath로 경로 설정
-        GameManager.instance.path = Path.Combine(Application.persistentDataPath, $"{name.text}.json");
+        GameManager.instance.path = Path.Combine(Application.persistentDataPath, $"{id.text}.json");
         //json 파일 생성
         GameManager.instance.SaveUserData();
     }
