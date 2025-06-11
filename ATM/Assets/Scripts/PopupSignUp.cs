@@ -25,28 +25,18 @@ public class PopupSignUp : MonoBehaviour
     {
         if (uIController == null)
         {
-            //Debug.LogError("UIController가 null입니다! 인스펙터에서 올바르게 참조되었는지 확인하세요.");
-        }
-        else
-        {
+            //AddUserData 이벤트 등록
             uIController.OnSignUpComplete += AddUserData;
-            Debug.Log("AddUserData 등록");
-        }
-
+        }       
     }
 
     private void OnDisable()
     {
-        if (uIController == null)
+        if (uIController != null)
         {
-            //Debug.LogError("UIController가 null입니다! 인스펙터에서 올바르게 참조되었는지 확인하세요.");
-        }
-        else
-        {
+            //AddUserData 이벤트 해제
             uIController.OnSignUpComplete -= AddUserData;
-            Debug.Log("AddUserData 해제");
         }
-
     }
 
     private void AddUserData()
