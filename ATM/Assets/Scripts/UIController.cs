@@ -109,6 +109,8 @@ public class UIController : MonoBehaviour
 
     public void CheckSignUp()
     {
+        string path = Path.Combine(Application.persistentDataPath, $"{popupSignUp.id.text}.json");
+
         if (popupSignUp.id.text == "" || popupSignUp.name.text == "" ||
             popupSignUp.password.text == ""  || popupSignUp.passwordConfirm.text == "")
         {
@@ -122,23 +124,20 @@ public class UIController : MonoBehaviour
             notice.text = "비밀번호가 일치하지 않습니다.";
         }
 
-        else
-        {
-            if (File.Exists(popupSignUp.id.text))
+        else if (File.Exists(path))
             {
                 OpenCheckInfoUI();
                 notice.text = "해당 아이디는 이미 사용중입니다.";
             }
 
-            else
-            {
-                OpenCompleteSignUpUI();
-                Debug.Log("창열기");
-
-                OnSignUpComplete?.Invoke();
-                popupSignUp.id.text = popupSignUp.name.text = popupSignUp.password.text =
-                    popupSignUp.passwordConfirm.text = notice.text = "";
-            }
+        else
+        {
+            OpenCompleteSignUpUI();
+            //이벤트 전달
+            OnSignUpComplete?.Invoke();
+            //빈 칸으로 만들기
+            popupSignUp.id.text = popupSignUp.name.text = popupSignUp.password.text =
+                popupSignUp.passwordConfirm.text = notice.text = "";
         }
     }
 }

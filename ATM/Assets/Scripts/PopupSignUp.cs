@@ -18,14 +18,6 @@ public class PopupSignUp : MonoBehaviour
         if (uIController == null)
         {
             uIController = FindObjectOfType<UIController>();
-            if (uIController == null)
-            {
-                //Debug.LogError("UIController를 찾을 수 없습니다! 씬에 존재하는지 확인하세요.");
-            }
-        }
-        else
-        {
-            Debug.Log("UI컨트롤러 존재");
         }
     }
 
@@ -38,7 +30,7 @@ public class PopupSignUp : MonoBehaviour
         else
         {
             uIController.OnSignUpComplete += AddUserData;
-            Debug.Log("AddUserData 실행");
+            Debug.Log("AddUserData 등록");
         }
 
     }
@@ -52,17 +44,21 @@ public class PopupSignUp : MonoBehaviour
         else
         {
             uIController.OnSignUpComplete -= AddUserData;
-            Debug.Log("AddUserData 삭제");
+            Debug.Log("AddUserData 해제");
         }
 
     }
 
     private void AddUserData()
     {
+        Debug.Log("AddUserData 실행");
+
         //새 userData 생성
         GameManager.instance.userData = new UserData($"{id.text}", $"{name.text}", $"{password.text}",
             100000, 100000);
-        //해당 userData를 json 파일로 생성
+        //해당 userData를 persistentDataPath로 경로 설정
         GameManager.instance.path = Path.Combine(Application.persistentDataPath, $"{name.text}.json");
+        //json 파일 생성
+        GameManager.instance.SaveUserData();
     }
 }
