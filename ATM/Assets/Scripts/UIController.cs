@@ -84,6 +84,7 @@ public class UIController : MonoBehaviour
     {
         bankUI?.SetActive(true);
         logInUI?.SetActive(false);
+        GameManager.instance.Login();
     }
 
     public void OpenCheckInfoUI()
