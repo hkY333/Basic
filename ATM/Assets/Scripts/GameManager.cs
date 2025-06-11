@@ -82,15 +82,5 @@ public class GameManager : MonoBehaviour
     {
         GameManager.instance.path = Path.Combine(Application.persistentDataPath, $"{id.text}.json");
         LoadUserData();
-
-        if (id.text == GameManager.instance.jID && password.text == GameManager.instance.jPassword)
-        {
-            Debug.Log("로그인 성공");
-        }
-        else
-        {
-            Debug.Log("해당 회원 미존재");
-        }
-        Refresh();
     }
 }
