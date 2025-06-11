@@ -1399,7 +1399,7 @@ GameObject:
   - component: {fileID: 168332268}
   - component: {fileID: 168332267}
   m_Layer: 5
-  m_Name: CheckInfoGray
+  m_Name: CheckLoginInfoGray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10227,6 +10227,7 @@ MonoBehaviour:
   completeSignUpUI: {fileID: 968438595}
   popupSignUp: {fileID: 1568515015}
   notice: {fileID: 444928410}
+  checkLoginInfoUI: {fileID: 168332265}
 --- !u!4 &1470212053
 Transform:
   m_ObjectHideFlags: 0

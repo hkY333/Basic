@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Format cashFormat;
     [SerializeField] private Format balanceFormat;
 
-    [SerializeField] private TMP_InputField id;
-    [SerializeField] private TMP_InputField password;
+    public TMP_InputField id;
+    public TMP_InputField password;
 
     public TextMeshProUGUI myName;
     public TextMeshProUGUI myCash;
@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        userData = new UserData("kyh", "2@" , "김영훈", 100000, 100000);
         Refresh();
     }
 
@@ -82,14 +81,16 @@ public class GameManager : MonoBehaviour
     public void Login()
     {
         GameManager.instance.path = Path.Combine(Application.persistentDataPath, $"{id.text}.json");
+        LoadUserData();
 
         if (id.text == GameManager.instance.jID && password.text == GameManager.instance.jPassword)
         {
-            Debug.Log("동일 아이디 및 비밀번호 존재");
+            Debug.Log("로그인 성공");
         }
         else
         {
             Debug.Log("해당 회원 미존재");
         }
+        Refresh();
     }
 }

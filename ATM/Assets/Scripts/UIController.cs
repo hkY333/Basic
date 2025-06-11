@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject completeSignUpUI;
     [SerializeField] private PopupSignUp popupSignUp;
     [SerializeField] private TextMeshProUGUI notice;
+    [SerializeField] private GameObject checkLoginInfoUI;
 
     // 이벤트 선언: 회원가입 성공 시 호출
     public event Action OnSignUpComplete;
@@ -82,9 +84,35 @@ public class UIController : MonoBehaviour
 
     public void OpenBankUI()
     {
-        bankUI?.SetActive(true);
-        logInUI?.SetActive(false);
-        GameManager.instance.Login();
+        string path = Path.Combine(Application.persistentDataPath, $"{GameManager.instance.id.text}.json");
+
+        string json = File.ReadAllText(path);
+        JToken root = JToken.Parse(json);
+
+        if (GameManager.instance.id.text == "" || GameManager.instance.password.text == "")
+        {
+            OpenCheckLoginInfoUI();
+            Debug.Log("빈칸 입력");
+        }
+
+        else if (!File.Exists(path))
+        {
+            OpenCheckLoginInfoUI();
+            Debug.Log("회원 없음");
+        }
+
+        else if (GameManager.instance.password.text != (string)root["password"])
+        {
+            OpenCheckLoginInfoUI();
+            Debug.Log("password 틀림");
+        }
+
+        else
+        {
+            bankUI?.SetActive(true);
+            logInUI?.SetActive(false);
+            GameManager.instance.Login();
+        }
     }
 
     public void OpenCheckInfoUI()
@@ -140,5 +168,15 @@ public class UIController : MonoBehaviour
             popupSignUp.id.text = popupSignUp.name.text = popupSignUp.password.text =
                 popupSignUp.passwordConfirm.text = notice.text = "";
         }
+    }
+
+    public void OpenCheckLoginInfoUI()
+    {
+        checkLoginInfoUI?.SetActive(true);
+    }
+
+    public void CloseCheckLoginInfoUI()
+    {
+        checkLoginInfoUI?.SetActive(false);
     }
 }
