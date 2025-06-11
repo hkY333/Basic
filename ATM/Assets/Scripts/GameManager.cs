@@ -59,16 +59,13 @@ public class GameManager : MonoBehaviour
         File.WriteAllText(path, json);
     }
 
-    public string jID;
-    public string jPassword;
-
     public void LoadUserData()
     {
         string json = File.ReadAllText(path);
         JToken root = JToken.Parse(json);
 
-        jID = (string)root["id"];
-        jPassword = (string)root["password"];
+        string jID = (string)root["id"];
+        string jPassword = (string)root["password"];
         JToken jName = root["name"];
         JToken jCash = root["cash"];
         JToken jBalance = root["balance"];

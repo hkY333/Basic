@@ -86,32 +86,35 @@ public class UIController : MonoBehaviour
     {
         string path = Path.Combine(Application.persistentDataPath, $"{GameManager.instance.id.text}.json");
 
-        string json = File.ReadAllText(path);
-        JToken root = JToken.Parse(json);
-
-        if (GameManager.instance.id.text == "" || GameManager.instance.password.text == "")
+        if (File.Exists(path))
         {
-            OpenCheckLoginInfoUI();
-            Debug.Log("빈칸 입력");
-        }
+            string json = File.ReadAllText(path);
+            JToken root = JToken.Parse(json);
 
-        else if (!File.Exists(path))
-        {
-            OpenCheckLoginInfoUI();
-            Debug.Log("회원 없음");
-        }
+            if (GameManager.instance.id.text == "" || GameManager.instance.password.text == "")
+            {
+                OpenCheckLoginInfoUI();
+                Debug.Log("빈칸 입력");
+            }
 
-        else if (GameManager.instance.password.text != (string)root["password"])
-        {
-            OpenCheckLoginInfoUI();
-            Debug.Log("password 틀림");
+            else if (GameManager.instance.password.text != (string)root["password"])
+            {
+                OpenCheckLoginInfoUI();
+                Debug.Log("password 틀림");
+            }
+
+            else
+            {
+                bankUI?.SetActive(true);
+                logInUI?.SetActive(false);
+                GameManager.instance.Login();
+            }
         }
 
         else
         {
-            bankUI?.SetActive(true);
-            logInUI?.SetActive(false);
-            GameManager.instance.Login();
+            OpenCheckLoginInfoUI();
+            Debug.Log("회원 없음");
         }
     }
 
