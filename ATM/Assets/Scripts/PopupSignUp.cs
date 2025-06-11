@@ -13,12 +13,20 @@ public class PopupSignUp : MonoBehaviour
     public TMP_InputField passwordConfirm;
 
 
-    void Awake()
+    private void Awake()
     {
         if (uIController == null)
         {
             uIController = FindObjectOfType<UIController>();
         }
+    }
+
+    private void Start()
+    {
+        //password.contentType = TMP_InputField.ContentType.Alphanumeric;
+        //password.lineType = TMP_InputField.LineType.SingleLine;
+        //passwordConfirm.contentType = TMP_InputField.ContentType.Alphanumeric;
+        //passwordConfirm.lineType = TMP_InputField.LineType.SingleLine;
     }
 
     private void OnEnable()
@@ -44,7 +52,7 @@ public class PopupSignUp : MonoBehaviour
         Debug.Log("AddUserData 실행");
 
         //새 userData 생성
-        GameManager.instance.userData = new UserData($"{id.text}", $"{name.text}", $"{password.text}",
+        GameManager.instance.userData = new UserData($"{id.text}", $"{password.text}", $"{name.text}",
             100000, 100000);
         //해당 userData를 persistentDataPath로 경로 설정
         GameManager.instance.path = Path.Combine(Application.persistentDataPath, $"{name.text}.json");
