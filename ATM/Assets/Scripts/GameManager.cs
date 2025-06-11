@@ -55,12 +55,15 @@ public class GameManager : MonoBehaviour
 
     public void SaveUserData()
     {
+        Debug.Log($"{userData.name}");
+
         string json = JsonConvert.SerializeObject(userData, Formatting.Indented);
         File.WriteAllText(path, json);
     }
 
     public void LoadUserData()
     {
+        Debug.Log($"{userData}");
         string json = File.ReadAllText(path);
         JToken root = JToken.Parse(json);
 
@@ -73,6 +76,7 @@ public class GameManager : MonoBehaviour
         myName.text = (string)jName;
         myCash.text = (string)jCash;
         myBalance.text = (string)jBalance;
+        Debug.Log($"{userData}");
     }
 
     public void Login()
